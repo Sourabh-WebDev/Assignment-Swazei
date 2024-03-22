@@ -28,16 +28,15 @@ const MovieSearch = () => {
         <div className='flex flex-col items-center gap-3 w-full'>
             <div className='p-2 md:p-5 w-full'>
                 <input type="text" className='md:w-full p-2 md:p-4 rounded-lg ' placeholder='search Movie' value={query} onChange={(e) => setQuery(e.target.value)} />
-
             </div>
             {!loading ?
-                <div className='grid grid-cols-2 gap-4'>
+                <div className='md:grid md:grid-cols-2 md:gap-4'>
                     {data?.results?.map((movie) => (
-                        <div key={movie.id} className='flex bg-white gap-4 rounded-lg p-5' >
+                        <div key={movie.id} className='flex bg-white gap-4 rounded-lg p-5 m-2 md:m-0' >
                             <img className='rounded-lg h-full' src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`} alt={movie.original_name} />
-                            <div className='text-left'>
-                                <h3 className='text-2xl'>{movie.original_name}</h3>
-                                <p>{movie.overview}</p>
+                            <div className='text-left border-l-2 p-1'>
+                                <h3 className=' text-lg md:text-2xl font-bold'>{movie?.original_name || 'NA'}</h3>
+                                <p>{movie?.overview || 'NA'}</p>
                             </div>
                         </div>
                     ))}

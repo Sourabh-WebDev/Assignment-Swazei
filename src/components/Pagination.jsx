@@ -4,7 +4,7 @@ import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 export function Pagination({ totalPage, currentPage, onPageChange }) {
 
-  const pageRange = totalPage > 5 ? 5 : totalPage;
+  const pageRange = totalPage > 3 ? 3 : totalPage;
 
   const getPageNumbers = () => {
     const pages = [];
