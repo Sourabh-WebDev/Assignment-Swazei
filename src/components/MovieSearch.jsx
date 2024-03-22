@@ -32,13 +32,13 @@ const MovieSearch = () => {
             {!loading ?
                 <div className='md:grid md:grid-cols-2 md:gap-4'>
                     {data?.results?.map((movie) => (
-                        <div key={movie.id} className='flex bg-white gap-4 rounded-lg p-5 m-2 md:m-0'>
+                        <div key={movie.id} className='flex flex-col md:flex-row bg-white gap-4 rounded-lg p-5 m-2 md:m-0'>
                             <img
-                                className='rounded-lg w-44 h-64'
+                                className='rounded-lg w-full md:w-44 h-64'
                                 src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`}
                                 alt={movie.original_name}
                             />
-                            <div className='text-left border-l-2 p-1'>
+                            <div className='text-left md:border-l-2 p-1'>
                                 <h3 className='text-lg md:text-2xl font-bold'>{movie?.original_name || 'NA'}</h3>
                                 <p>{movie?.overview || 'NA'}</p>
                             </div>
